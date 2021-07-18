@@ -13,7 +13,7 @@
 <body>
     <div style="width: 900px;" class="container max-w-full mx-auto pt-4">
 
-        <form action="/posts" method="POST">
+        <form action="/tests" method="POST">
             @csrf
 
             <div class="mb-4">
@@ -30,7 +30,7 @@
                     id="content" name="content"></textarea>
             </div>
 
-            <button class="bg-indigo-500 text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow">Create
+            <button class="bg-indigo-500 text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow">Update
             </button>
         </form>
 
