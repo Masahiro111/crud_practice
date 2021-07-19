@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,7 +84,25 @@ Route::put('/blogs/{id}', [BlogController::class, 'update'])
 Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])
     ->middleware('auth');
 
+/* profile area --------------------------------------------------- */
 
+Route::get('/profile', [ProfileController::class, 'index'])
+    ->middleware('auth');
+
+Route::get('/profile/create', [ProfileController::class, 'create'])
+    ->middleware('auth');
+
+Route::post('/profile', [ProfileController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])
+    ->middleware('auth');
+
+Route::put('/profile/{id}', [ProfileController::class, 'update'])
+    ->middleware('auth');
+
+Route::delete('/profile/{id}', [ProfileController::class, 'destroy'])
+    ->middleware('auth');
 
 
 /* dashboard area --------------------------------------------------- */
