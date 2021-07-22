@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -104,6 +105,30 @@ Route::put('/profile/{id}', [ProfileController::class, 'update'])
 Route::delete('/profile/{id}', [ProfileController::class, 'destroy'])
     ->middleware('auth');
 
+
+Route::get('/crud', [CrudController::class, 'index'])
+    ->name('crud.index')
+    ->middleware('auth');
+
+Route::get('/crud/create', [CrudController::class, 'create'])
+    ->name('crud.create')
+    ->middleware('auth');
+
+Route::post('/crud', [CrudController::class, 'store'])
+    ->name('crud.create')
+    ->middleware('auth');
+
+Route::get('/crud/{id}/edit', [CrudController::class, 'edit'])
+    ->name('crud.edti')
+    ->middleware('auth');
+
+Route::put('/crud/{id}', [CrudController::class, 'update'])
+    ->name('crud.update')
+    ->middleware('auth');
+
+Route::delete('/crud/{id}', [CrudController::class, 'destroy'])
+    ->name('crud.delete')
+    ->middleware('auth');
 
 /* dashboard area --------------------------------------------------- */
 

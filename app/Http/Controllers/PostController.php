@@ -51,6 +51,8 @@ class PostController extends Controller
             'content' => $request->content,
         ]);
 
+        dd($post->getChanges());
+
         return redirect('/posts');
     }
 
