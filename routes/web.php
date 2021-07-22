@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
@@ -129,6 +130,34 @@ Route::put('/crud/{id}', [CrudController::class, 'update'])
 Route::delete('/crud/{id}', [CrudController::class, 'destroy'])
     ->name('crud.delete')
     ->middleware('auth');
+
+/* archive area --------------------------------------------------- */
+
+Route::get('/archive', [ArchiveController::class, 'index'])
+    ->name('archive.index')
+    ->middleware('auth');
+
+Route::get('/archive/create', [ArchiveController::class, 'create'])
+    ->name('archive.create')
+    ->middleware('auth');
+
+Route::post('/archive', [ArchiveController::class, 'store'])
+    ->name('archive.store')
+    ->middleware('auth');
+
+Route::get('/archive/{id}/edit', [ArchiveController::class, 'edit'])
+    ->name('archive.edit')
+    ->middleware('auth');
+
+Route::put('/archive/{id}', [ArchiveController::class, 'update'])
+    ->name('archive.update')
+    ->middleware('auth');
+
+Route::delete('/archive/{id}', [ArchiveController::class, 'destroy'])
+    ->name('archive.delete')
+    ->middleware('auth');
+
+
 
 /* dashboard area --------------------------------------------------- */
 
