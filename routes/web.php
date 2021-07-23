@@ -4,6 +4,7 @@ use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
@@ -157,6 +158,19 @@ Route::delete('/archive/{id}', [ArchiveController::class, 'destroy'])
     ->name('archive.delete')
     ->middleware('auth');
 
+/* archive area --------------------------------------------------- */
+
+Route::get('/item', [ItemController::class, 'index']);
+
+Route::get('/item/create', [ItemController::class, 'create']);
+
+Route::post('/item', [ItemController::class, 'store']);
+
+Route::get('/item/{id}/edit', [ItemController::class, 'edit']);
+
+Route::put('/item/{id}', [ItemController::class, 'update']);
+
+Route::delete('/item/{id}', [ItemController::class, 'delete']);
 
 
 /* dashboard area --------------------------------------------------- */
