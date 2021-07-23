@@ -43,8 +43,8 @@ class ArchiveController extends Controller
         ]);
 
         Archive::create([
-            'title' => $request->post('title'),
-            'content' => $request->post('content'),
+            'title' => $request->title,
+            'content' => $request->content,
         ]);
 
         return redirect('/archive');
