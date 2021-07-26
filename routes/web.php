@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ItemController;
@@ -171,6 +172,21 @@ Route::get('/item/{id}/edit', [ItemController::class, 'edit']);
 Route::put('/item/{id}', [ItemController::class, 'update']);
 
 Route::delete('/item/{id}', [ItemController::class, 'delete']);
+
+/* archive area --------------------------------------------------- */
+
+Route::get('/coffee', [CoffeeController::class, 'index']);
+
+Route::get('/coffee/create', [CoffeeController::class, 'create']);
+
+Route::post('/coffee', [CoffeeController::class, 'store']);
+
+Route::get('/coffee/{id}/edit', [CoffeeController::class, 'edit']);
+
+Route::put('/coffee/{id}', [CoffeeController::class, 'update']);
+
+Route::delete('/coffee/{id}', [CoffeeController::class, 'delete']);
+
 
 
 /* dashboard area --------------------------------------------------- */

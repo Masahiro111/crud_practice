@@ -11,7 +11,7 @@
 
 <body>
 
-    <div style=width:900; class="container max-w-full mx-auto pt-4">
+    <div style=width:900px; class="container max-w-full mx-auto pt-4">
 
         <h1 class="text-2xl font-bold mb-4">Create Coffee Blog</h1>
 

@@ -16,7 +16,7 @@ class CoffeeController extends Controller
     {
         $coffees = Coffee::all();
 
-        return view('coffee.index');
+        return view('coffee.index', compact('coffees'));
     }
 
     /**
@@ -84,7 +84,7 @@ class CoffeeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'titile' => 'required',
+            'title' => 'required',
             'content' => 'required',
         ]);
 
