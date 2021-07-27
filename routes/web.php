@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
@@ -187,7 +188,19 @@ Route::put('/coffee/{id}', [CoffeeController::class, 'update']);
 
 Route::delete('/coffee/{id}', [CoffeeController::class, 'delete']);
 
+/* Book area -------------------------------------------------------- */
 
+Route::get('/book', [BookController::class, 'index']);
+
+Route::get('/book/create', [BookController::class, 'create']);
+
+Route::post('/book', [BookController::class, 'store']);
+
+Route::get('/book/{id}/edit', [BookController::class, 'edit']);
+
+Route::put('/book/{id}', [BookController::class, 'update']);
+
+Route::delete('/book/{id}', [BookController::class, 'delete']);
 
 /* dashboard area --------------------------------------------------- */
 
