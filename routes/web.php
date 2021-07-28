@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -201,6 +202,20 @@ Route::get('/book/{id}/edit', [BookController::class, 'edit']);
 Route::put('/book/{id}', [BookController::class, 'update']);
 
 Route::delete('/book/{id}', [BookController::class, 'delete']);
+
+/* Hello area --------------------------------------------------- */
+
+Route::get('/hello', [HelloController::class, 'index']);
+
+Route::get('/hello/create', [HelloController::class, 'create']);
+
+Route::post('/hello', [HelloController::class, 'store']);
+
+Route::get('/hello/{id}/{edit}', [HelloController::class, 'edit']);
+
+Route::put('/hello/{id}', [HelloController::class, 'update']);
+
+Route::delete('/hello/{id}', [HelloController::class, 'delete']);
 
 /* dashboard area --------------------------------------------------- */
 
