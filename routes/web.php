@@ -8,6 +8,7 @@ use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MemoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
@@ -27,6 +28,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/memo', [MemoController::class, 'index'])
+    ->name('memo.index')
+    ->middleware('auth');
+
+Route::get('/memo/create', [MemoController::class, 'create'])
+    ->name('memo.add');
+
 
 /* posts area ------------------------------------------------- */
 
