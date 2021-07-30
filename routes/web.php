@@ -33,7 +33,7 @@ Route::get('/memo', [MemoController::class, 'index'])
     ->name('memo.index')
     ->middleware('auth');
 
-Route::get('/memo/create', [MemoController::class, 'create'])
+Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
 
 

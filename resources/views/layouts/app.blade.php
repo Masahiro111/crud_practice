@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> -->
+    <link rel="stylesheet" href="{{ mix('css/bootstrap.min.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ mix('css/popper.min.js') }}" defer></script>
+    <script src="{{ mix('css/bootstrap5.min.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">

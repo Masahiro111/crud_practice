@@ -34,7 +34,7 @@ class MemoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function add(Request $request)
     {
         Memo::create([
             'user_id' => Auth::id(),
@@ -43,6 +43,27 @@ class MemoController extends Controller
         ]);
 
         return redirect()->route('memo.index');
+    }
+
+
+    /**
+     * ログインユーザー名取得
+     * @return string
+     */
+    private function getLoginUserName()
+    {
+        $user = Auth::user();
+
+        $name = '';
+        if ($user) {
+            if (7 < mb_strlen($user->name)) {
+                $name = mb_substr($user->name, 0, 7) . "...";
+            } else {
+                $name = $user->name;
+            }
+        }
+
+        return $name;
     }
 
     /**
