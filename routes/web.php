@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MemoController;
+use App\Http\Controllers\MyController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
@@ -35,6 +36,20 @@ Route::get('/memo', [MemoController::class, 'index'])
 
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
+
+// My route area ----------------------------------------------
+
+Route::get('/my', [MyController::class, 'index']);
+
+Route::get('/my/create', [MyController::class, 'create']);
+
+Route::post('/my', [MyController::class, 'store']);
+
+Route::get('/my/{id}/edit', [MyController::class, 'edit']);
+
+Route::put('/my/{id}', [MyController::class, 'update']);
+
+Route::delete('/my/{id}', [MyController::class, 'delete']);
 
 
 /* posts area ------------------------------------------------- */
