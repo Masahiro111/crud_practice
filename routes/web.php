@@ -14,6 +14,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\WaterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -133,6 +134,26 @@ Route::put('/profile/{id}', [ProfileController::class, 'update'])
     ->middleware('auth');
 
 Route::delete('/profile/{id}', [ProfileController::class, 'destroy'])
+    ->middleware('auth');
+
+/* Water area --------------------------------------------------- */
+
+Route::get('/water', [WaterController::class, 'index'])
+    ->middleware('auth');
+
+Route::get('/water/create', [WaterController::class, 'create'])
+    ->middleware('auth');
+
+Route::post('/water', [WaterController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('/water/{id}/edit', [WaterController::class, 'edit'])
+    ->middleware('auth');
+
+Route::put('/water/{id}', [WaterController::class, 'update'])
+    ->middleware('auth');
+
+Route::delete('/water/{id}', [WaterController::class, 'delete'])
     ->middleware('auth');
 
 /* profile area --------------------------------------------------- */
