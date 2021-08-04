@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\CupContorller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ItemController;
@@ -38,6 +39,22 @@ Route::get('/memo', [MemoController::class, 'index'])
 
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
+
+// Cup route area ----------------------------------------------
+
+Route::get('/cup', [CupContorller::class, 'index']);
+
+Route::get('/cup/create', [CupController::class, 'create']);
+
+Route::post('/cup', [CupController::class, 'store']);
+
+Route::get('/cup/{id}/edit', [CupController::class, 'edit']);
+
+Route::put('/cup/{id}', [CupController::class, 'update']);
+
+Route::delete('/cup/{id}', [CupController::class, 'delete']);
+
+
 
 // My route area ----------------------------------------------
 
