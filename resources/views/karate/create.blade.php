@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>karate Create</title>
+    <title>Cup Create</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
 <body>
     <div style=width:900px; class="container max-w-full mx-auto pt-4">
 
-        <a href="/karate"
+        <a href="/cup"
             class="bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow-lg">Go
             Back</a>
 
-        <form action="/karate" method="POST">
+        <form action="/cup" method="POST">
             @csrf
 
             <div class="mb-4">

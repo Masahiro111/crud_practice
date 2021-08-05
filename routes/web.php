@@ -9,6 +9,7 @@ use App\Http\Controllers\CupContorller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\KarateController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PostController;
@@ -39,6 +40,27 @@ Route::get('/memo', [MemoController::class, 'index'])
 
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
+
+//  Karate route area ----------------------------------------------
+
+Route::get('/karate', [KarateController::class, 'index'])
+    ->middleware('auth');
+
+Route::get('/karate/create', [KarateController::class, 'creaet'])
+    ->middleware('auth');
+
+Route::post('/karate', [KarateController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('/karate/{id}/edit', [KarateController::class, 'edit'])
+    ->middleware('auth');
+
+Route::put('/karate/{id}', [KarateController::class, 'update'])
+    ->middleware('auth');
+
+Route::delete('/karate/{id}', [KarateController::class, 'delete'])
+    ->middleware('auth');
+
 
 // Cup route area ----------------------------------------------
 
