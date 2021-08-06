@@ -8,6 +8,7 @@ use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CupContorller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\InstaController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\KarateController;
 use App\Http\Controllers\MemoController;
@@ -41,6 +42,27 @@ Route::get('/memo', [MemoController::class, 'index'])
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
 
+//  Insta route area ----------------------------------------------
+
+Route::get('/insta', [InstaController::class, 'index'])
+    ->middleware('auth');
+
+Route::get('/insta/create', [InstaController::class, 'create'])
+    ->middleware('auth');
+
+Route::post('/insta', [InstaController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('/insta/{id}/edit', [InstaController::class, 'edit'])
+    ->middleware('auth');
+
+Route::put('/insta/{id}', [InstaController::class, 'update'])
+    ->middleware('auth');
+
+Route::delete('/insta/{id}', [InstaController::class, 'destroy'])
+    ->middleware('auth');
+
+
 //  Karate route area ----------------------------------------------
 
 Route::get('/karate', [KarateController::class, 'index'])
@@ -58,7 +80,7 @@ Route::get('/karate/{id}/edit', [KarateController::class, 'edit'])
 Route::put('/karate/{id}', [KarateController::class, 'update'])
     ->middleware('auth');
 
-Route::delete('/karate/{id}', [KarateController::class, 'delete'])
+Route::delete('/karate/{id}', [KarateController::class, 'destroy'])
     ->middleware('auth');
 
 

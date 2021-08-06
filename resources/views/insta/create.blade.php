@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>karate Create</title>
+    <title>Insta Create</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
 <body>
     <div style=width:900px; class="container max-w-full mx-auto pt-4">
 
-        <a href="/karate"
+        <a href="/insta"
             class="bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow-lg">Go
             Back</a>
 
-        <form action="/karate" method="POST">
+        <form action="/insta" method="POST">
             @csrf
 
             <div class="mb-4">
@@ -33,7 +33,7 @@
                 <label for="" class="font-bold text-gray-800"></label>
                 <textarea
                     class="h-24 bg-white border border-gray-300 rounded py-4 px-3 w-full text-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:ring-0"
-                    name="content" id="content" cols="30" rows="10">value="{{ old('content') }}"</textarea>
+                    name="content" id="content" cols="30" rows="10">{{ old('content') }}</textarea>
                 @error('content')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
