@@ -7,6 +7,7 @@ use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\CupContorller;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FirstcrudController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\InstaController;
 use App\Http\Controllers\ItemController;
@@ -41,6 +42,20 @@ Route::get('/memo', [MemoController::class, 'index'])
 
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
+
+//  Insta route area ----------------------------------------------
+
+Route::get('/fristcrud', [FirstcrudController::class, 'index']);
+
+Route::get('/firstcrud/create', [FirstcrudController::class, 'create']);
+
+Route::post('/firstcrud', [FirstcrudController::class, 'store']);
+
+Route::get('/firstcrud/{id}/edit', [FirstcrudController::class, 'edit']);
+
+Route::put('/firstcrud/{id}', [FirstcrudController::class, 'update']);
+
+Route::delete('/firstcrud/{id}', [FirstcrudController::class, 'delete']);
 
 //  Insta route area ----------------------------------------------
 
