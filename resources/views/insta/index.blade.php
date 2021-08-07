@@ -15,6 +15,10 @@
 
         <h1 class="text-2xl font-bold mb-4">Insta Blog</h1>
 
+        @if(Session::has('message'))
+        メッセージ：{{ session('message') }}
+        @endif
+
         <a href="/insta/create"
             class="bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 rounded shadow-lg hover:shadow mt-2">New
             Insta Blog</a>

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Insta;
 use Illuminate\Http\Request;
 
-class InstaController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +13,7 @@ class InstaController extends Controller
      */
     public function index()
     {
-        $instas = Insta::all();
-        return view('insta.index', compact('instas'));
-    }
-
-    public function search(Request $request)
-    {
+        //
     }
 
     /**
@@ -29,7 +23,7 @@ class InstaController extends Controller
      */
     public function create()
     {
-        return view('insta.create');
+        //
     }
 
     /**
@@ -40,18 +34,7 @@ class InstaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|min:5',
-            'content' => 'required|min:5',
-        ]);
-
-        Insta::create([
-            'title' => $request->post('title'),
-            'content' => $request->post('content'),
-        ]);
-
-        return redirect('/insta')
-            ->with('message', '登録が完了しました');
+        //
     }
 
     /**
@@ -73,9 +56,7 @@ class InstaController extends Controller
      */
     public function edit($id)
     {
-        $insta = Insta::find($id);
-
-        return view('insta.edit', compact('insta'));
+        //
     }
 
     /**
@@ -87,18 +68,7 @@ class InstaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-        ]);
-
-        Insta::find($id)->update([
-            'title' => $request->post('title'),
-            'content' => $request->post('content'),
-        ]);
-
-        return redirect('/insta')
-            ->with('message', '更新が完了いたしました。');
+        //
     }
 
     /**
@@ -109,9 +79,6 @@ class InstaController extends Controller
      */
     public function destroy($id)
     {
-        Insta::find($id)->delete();
-
-        return redirect('/insta')
-            ->with('message', '削除が完了いたしました。');
+        //
     }
 }
