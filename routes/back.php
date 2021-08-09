@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Back\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    echo 'back';
-});
+Route::resource('posts', PostController::class)->except('show');
