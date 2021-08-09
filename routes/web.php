@@ -43,6 +43,13 @@ Route::get('/memo', [MemoController::class, 'index'])
 Route::get('/memo/add', [MemoController::class, 'add'])
     ->name('memo.add');
 
+
+Route::get('/', [PostController::class, 'index'])
+    ->name('home');
+
+Route::resource('/posts', PostController::class)
+    ->only('index', 'show');
+
 //  Insta route area ----------------------------------------------
 
 Route::get('/fristcrud', [FirstcrudController::class, 'index']);
